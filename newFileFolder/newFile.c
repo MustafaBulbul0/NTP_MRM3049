@@ -16,7 +16,7 @@ int main()
 	{
 		j++;
 		fileName = ft_strjoin(ft_file(j), ".cpp");
-		fd = open(fileName, O_RDWR | O_CREAT, 777);
+		fd = open(fileName, O_RDWR | O_CREAT, 0777);
 		ret = read(fd, buf, 1);
 		if (ret == 0)
 		{
