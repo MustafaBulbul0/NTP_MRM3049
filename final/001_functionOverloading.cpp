@@ -17,19 +17,32 @@
 //Default Parametreler: Fonksiyon aşırı yükleme ile default parametreler bir arada kullanılamaz.
 
 #include <iostream>
-
 using namespace std;
 
-int topla(int a, int b) {
-return a + b;
-}
+class Matematik {
+public:
+    // İki parametreli toplama
+    int topla(int a, int b) {
+        return a + b;
+    }
 
-double topla(double a, double b) {
-return a + b;
-}
+    // Üç parametreli toplama (Aynı isim, farklı parametre sayısı)
+    int topla(int a, int b, int c) {
+        return a + b + c;
+    }
 
-int main()
-{
-cout << topla(5, 10);
-cout << topla(5.5, 2.3);
+    // Farklı tipte parametreli toplama (Aynı isim, farklı veri tipi)
+    double topla(double a, double b) {
+        return a + b;
+    }
+};
+
+int main() {
+    Matematik m;
+
+    cout << "2 sayinin toplami: " << m.topla(5, 10) << endl;       // 1. fonksiyon çalışır
+    cout << "3 sayinin toplami: " << m.topla(5, 10, 15) << endl;   // 2. fonksiyon çalışır
+    cout << "Ondalikli toplam: " << m.topla(2.5, 3.5) << endl;    // 3. fonksiyon çalışır
+
+    return 0;
 }
